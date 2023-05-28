@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Rute untuk login
+Route::post('login', 'LoginController@login')->name('login');
+
+// Rute untuk masing-masing opsi login
+Route::get('login/mahasiswa', 'Auth\LoginController@showMahasiswaLoginForm')->name('login.mahasiswa');
+Route::get('login/staff', 'Auth\LoginController@showStaffLoginForm')->name('login.staff');
+Route::get('login/dosen', 'Auth\LoginController@showDosenLoginForm')->name('login.dosen');
